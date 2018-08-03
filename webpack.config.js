@@ -5,6 +5,9 @@ module.exports = {
         filename: "out.js",
         path: path.resolve(__dirname, "js")
     },
+     resolve: {
+        extensions: ['.js', '.jsx']
+    },
     mode: "development",
     watch: true,
     module: {
