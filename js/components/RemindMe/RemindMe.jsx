@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import RestResource from './remindme.service.js';
 import Clouds from '../Clouds/Clouds.jsx';
 import SlackIcon from '../SlackIcon/SlackIcon.jsx';
+import ApplicationForm from '../ApplicationForm/ApplicationForm.jsx';
 
 export default class RemindMe extends React.Component {
  
@@ -12,6 +13,7 @@ export default class RemindMe extends React.Component {
             <div>
                 <Clouds/>
                 <SlackIcon />
+                <ApplicationForm/>
             </div>     
         )
     }
