@@ -5,23 +5,27 @@ module.exports = {
         filename: "out.js",
         path: path.resolve(__dirname, "js")
     },
-     resolve: {
+    resolve: {
         extensions: ['.js', '.jsx']
     },
     mode: "development",
     watch: true,
     module: {
-        rules: [{
-            test: /\.jsx$/,
-            exclude: /node_modules/,
-            use: {
-                loader: "babel-loader",
-                options: {
-                    presets: ["es2015", "stage-2","react"]
+        rules: [
+            {
+                test: /\.jsx$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ["es2015", "stage-2", "react"]
+                    }
                 }
+        },
+            {
+                test: /\.scss$/,
+                loaders: ['style-loader', 'css-loader', 'sass-loader']
             }
-}]
+        ]
     }
 };
-
-
