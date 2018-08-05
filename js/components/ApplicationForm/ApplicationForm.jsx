@@ -2,14 +2,14 @@ import React from 'React';
 import ReactDOM from 'react-dom';
 import SlackIcon from '../SlackIcon/SlackIcon.jsx';
 import RestResource from './applicationform.service.js';
+//import TimePicker from 'rc-time-picker';
 
 export default class ApplicationForm extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            name: '',
+            email: '',
             date: '',
-            time: '',
             message: ''
         }
     }
@@ -24,16 +24,20 @@ export default class ApplicationForm extends React.Component{
     handleSubmit = (event) => {
         event.preventDefault();
         
-        const formData ={
-            name: this.state.name,
+        const formData = {
+            email: this.state.email,
             date:this.state.date,
-            time: this.state.time,
             message: this.state.message
         }
         
-        console.log(formData);
+        //create instance from service
         const restApi = new RestResource();
         const sendData = restApi.sendData(formData);
+    }
+    
+    
+    transformTextarea = (e) => {
+        e.target.style.height = "100px";
     }
     
     
@@ -49,29 +53,22 @@ export default class ApplicationForm extends React.Component{
                           <input className="primary" 
                           placeholder="Enter your slack name" 
                           type="text"
-                          name="name"
+                          name="email"
                           value={this.state.name}
                           onChange={this.handleChange}/>
                     </div>
                     <div className="col">
                         <label>Enter Date</label>
                           <input className="primary" 
-                          type="date"
+                          type="datetime-local"
                           name="date"
-                          value={this.state.date}
-                          onChange={this.handleChange}/>
-                    </div>
-                     <div className="col">
-                        <label>Enter Time</label>
-                          <input className="primary" 
-                          type="time"
-                          name="time"
                           value={this.state.date}
                           onChange={this.handleChange}/>
                     </div>
                      <div className="col">
                         <label>Enter message</label>
                          <textarea 
+                           onFocus={this.transformTextarea} 
                             className="primary"
                              name="message"
                               value={this.state.message}

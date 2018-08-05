@@ -13,7 +13,6 @@ mongoose.connect('mongodb://localhost/remindmedb');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cors());
 
 
 var routes = require('./api/routes/remindMeRoutes'); //importing route
