@@ -21,14 +21,9 @@ export default class ApplicationForm extends React.Component{
         })
     }
     
-    
-    handleSubmit = () => {
-        this.showData();
-    }
-    
-    
-    sendData = (event) => {
+    handleSubmit = (event) => {
         event.preventDefault();
+        
         const formData ={
             name: this.state.name,
             date:this.state.date,
@@ -36,10 +31,9 @@ export default class ApplicationForm extends React.Component{
             message: this.state.message
         }
         
-        const restApi = new RestResource();
-        const sendData = restApi.sendData(FormData);
-        
         console.log(formData);
+        const restApi = new RestResource();
+        const sendData = restApi.sendData(formData);
     }
     
     
@@ -49,42 +43,43 @@ export default class ApplicationForm extends React.Component{
           <div className="row">
             <SlackIcon />
                <h1>Remind me App</h1>
-                <form>
-                     <div className="col form-group">
+                <form onSubmit={this.handleSubmit}>
+                     <div className="col">
                          <label>Enter email</label>
-                          <input className="primary js-input" 
+                          <input className="primary" 
                           placeholder="Enter your slack name" 
                           type="text"
                           name="name"
                           value={this.state.name}
                           onChange={this.handleChange}/>
                     </div>
-                    <div className="col form-group">
+                    <div className="col">
                         <label>Enter Date</label>
-                          <input className="primary js-input" 
+                          <input className="primary" 
                           type="date"
                           name="date"
                           value={this.state.date}
                           onChange={this.handleChange}/>
                     </div>
-                     <div className="col form-group">
-                          <input className="primary js-input" 
+                     <div className="col">
+                        <label>Enter Time</label>
+                          <input className="primary" 
                           type="time"
                           name="time"
                           value={this.state.date}
                           onChange={this.handleChange}/>
                     </div>
-                     <div className="col form-group">
+                     <div className="col">
+                        <label>Enter message</label>
                          <textarea 
-                            className="primary js-input"
+                            className="primary"
                              name="message"
                               value={this.state.message}
                               onChange={this.handleChange}>
                         </textarea>
                      </div>
-                     <div className="col form-group">
-                      <button className="primary js-button" type="submit"
-                      onClick={this.showData}>
+                     <div className="col">
+                      <button className="primary" type="submit">
                       Send reminder inside Slack
                       </button>
                     </div>

@@ -408,13 +408,15 @@
      font-family: 'Lato', sans-serif;
      font-size: $f-size-main;
      font-weight: 700;
-     margin: .5em 0;
+     margin-top:1.7rem;
+     margin-bottom: -2.5rem;
      max-width: 100%;
      min-height: 48px;
      padding: 0 .8em;
      text-transform: capitalize;
      width: 100%;
      word-break: break-word;
+     outline:none;
 
      @media screen and (min-width: $s-row + ($s-dialog-h * 4)) {
          margin: .5em;
@@ -433,15 +435,25 @@
      color: $c-text-dark;
      font-family: 'Lato', sans-serif;
      font-size: $f-size-main;
-     margin: .5em 0;
+     margin: .1em 0;
      max-width: 100%;
      min-height: 48px;
-     padding: 0 .8em;
-     width: 39%;
+     padding: 0 .5em;
+     width: 50%;
      word-break: break-word;
+     outline:none;
 
      @media screen and (min-width: $s-row + ($s-dialog-h * 4)) {
          margin: .5em;
          max-width: $s-element-max;
      }
  }
+
+textarea{
+    resize:none;
+}
+
+label{
+    display:block;
+    margin-bottom:0;
+}
