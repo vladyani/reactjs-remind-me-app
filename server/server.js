@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 
 //mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/remindmedb');
+mongoose.connect('mongodb://vladyani:vladyani@ds117362.mlab.com:17362/tasks');
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
