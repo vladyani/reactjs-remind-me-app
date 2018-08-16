@@ -5,6 +5,11 @@ module.exports = {
         filename: "out.js",
         path: path.resolve(__dirname, "js")
     },
+    devServer: {
+        inline: true,
+        contentBase: './',
+        port: 3005
+    },
     resolve: {
         extensions: ['.js', '.jsx']
     },
@@ -21,7 +26,7 @@ module.exports = {
                         presets: ["es2015", "stage-2", "react"]
                     }
                 }
-        },
+            },
             {
                 test: /\.scss$/,
                 loaders: ['style-loader', 'css-loader', 'sass-loader']

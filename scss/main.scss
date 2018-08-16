@@ -175,7 +175,7 @@
  $slack-size: 96px;
  $dot-diameter: 18px;
  $slack-angle: 15deg;
- $duration: 2s;
+ $duration: 3s;
 
  $slack-blue: #6ecadc;
  $slack-yellow: #e9a820;
@@ -184,8 +184,7 @@
 
  .slack {
      //     position: absolute;
-     z-index: 100;
-     //     top: 25%;
+     z-index: 100; //     top: 25%;
      //     left: 48%;
      margin-bottom: 6rem;
      transform: translateX(-50%);
@@ -207,33 +206,33 @@
          top: 0;
          left: 0;
          background-color: $slack-green;
-         animation: slack-animation--a $duration infinite;
+         animation: slack-animation-a $duration infinite;
          transform: translateX($dot-diameter);
      }
      &--b {
          top: 0;
          right: 0;
          background-color: $slack-blue;
-         animation: slack-animation--b $duration infinite;
+         animation: slack-animation-b $duration infinite;
          transform: translateY($dot-diameter);
      }
      &--c {
          bottom: 0;
          right: 0;
          background-color: $slack-yellow;
-         animation: slack-animation--c $duration infinite;
+         animation: slack-animation-c $duration infinite;
          transform: translateX(-$dot-diameter);
      }
      &--d {
          bottom: 0;
          left: 0;
          background-color: $slack-pink;
-         animation: slack-animation--d $duration infinite;
+         animation: slack-animation-d $duration infinite;
          transform: translateY(-$dot-diameter);
      }
  }
 
- @keyframes slack-animation--a {
+ @keyframes slack-animation-a {
      0% {
          top: 0;
          bottom: auto;
@@ -261,7 +260,7 @@
      }
  }
 
- @keyframes slack-animation--b {
+ @keyframes slack-animation-b {
      0% {
          right: 0;
          left: auto;
@@ -289,7 +288,7 @@
      }
  }
 
- @keyframes slack-animation--c {
+ @keyframes slack-animation-c {
      0% {
          bottom: 0;
          top: auto;
@@ -317,7 +316,7 @@
      }
  }
 
- @keyframes slack-animation--d {
+ @keyframes slack-animation-d {
      0% {
          left: 0;
          right: auto;
@@ -408,7 +407,7 @@
      font-family: 'Lato', sans-serif;
      font-size: $f-size-main;
      font-weight: 700;
-     margin-top:1.7rem;
+     margin-top: 1.7rem;
      margin-bottom: -2.5rem;
      max-width: 100%;
      min-height: 48px;
@@ -416,7 +415,7 @@
      text-transform: capitalize;
      width: 100%;
      word-break: break-word;
-     outline:none;
+     outline: none;
 
      @media screen and (min-width: $s-row + ($s-dialog-h * 4)) {
          margin: .5em;
@@ -441,7 +440,7 @@
      padding: 0 .5em;
      width: 50%;
      word-break: break-word;
-     outline:none;
+     outline: none;
 
      @media screen and (min-width: $s-row + ($s-dialog-h * 4)) {
          margin: .5em;
@@ -449,11 +448,19 @@
      }
  }
 
-textarea{
-    resize:none;
-}
+ textarea {
+     resize: none;
+ }
 
-label{
-    display:block;
-    margin-bottom:0;
-}
+ label {
+     display: block;
+     margin-bottom: 0;
+ } 
+
+//styles for h1
+ .logo {
+     line-height: 90px;
+     margin-left: 1.4rem;
+     color: #4a4949;
+     text-transform: uppercase;
+ }

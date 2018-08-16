@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 export default class SlackIcon extends React.Component{
     constructor(props){
         super(props);
-        
     }
 
     render(){   
