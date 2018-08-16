@@ -1,7 +1,7 @@
 import React from 'React';
 import ReactDOM from 'react-dom';
 import SlackIcon from '../SlackIcon/SlackIcon.jsx';
-import RestResource from './applicationform.service.js';
+import SlackWebhooksApi from '../../application.service';
 //TODO
 //import TimePicker from 'rc-time-picker';
 
